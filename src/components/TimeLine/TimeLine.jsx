@@ -32,7 +32,7 @@ function TimeLine(props) {
 }
 
 TimeLine.propTypes = {
-	numberOfMonthsInLine: PropTypes.oneOf(1, 2, 3).number,
+	numberOfMonthsInLine: PropTypes.oneOf([1, 2, 3]),
 	festivals: PropTypes.arrayOf(
 		PropTypes.shape({
 			id: PropTypes.number.isRequried,
@@ -41,7 +41,7 @@ TimeLine.propTypes = {
 			endDate: PropTypes.string.isRequried,
 		})
 	).isRequired,
-	width: PropTypes.oneOf(700, 800, 900, 1000).number,
+	width: PropTypes.oneOf([700, 800, 900, 1000]),
 	extractFest: PropTypes.func.isRequired,
 };
 
