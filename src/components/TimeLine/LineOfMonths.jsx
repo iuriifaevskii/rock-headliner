@@ -52,7 +52,6 @@ function LineOfMonths(props) {
 				width={width}
 				numberOfMonthsInLine={numberOfMonthsInLine}
 				festivalsForSelectedMonth={festivalsForSelectedMonth()}
-				colNumber={colNumber}
 				key={i}
 				monthNumber={monthNumber}
 				extractFest={extractFest}

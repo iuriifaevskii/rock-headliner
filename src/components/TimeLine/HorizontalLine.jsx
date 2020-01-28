@@ -34,7 +34,7 @@ function HorizontalLine(props) {
 	}
 
 	return (
-		<div style={blackLine}>
+		<div className='horizontal-line' style={blackLine}>
 			<div style={verticalLineWrapper}>{verticalLines}</div>
 		</div>
 	);

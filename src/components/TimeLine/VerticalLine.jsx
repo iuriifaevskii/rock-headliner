@@ -43,6 +43,7 @@ function VerticalLine(props) {
 
 	return (
 		<div
+			className={`vertical-line ${pointedDay ? 'pointed-day' : null}`}
 			onClick={handleClick}
 			onKeyDown={handleClick}
 			style={{ ...lineWrapper, transform, zIndex }}

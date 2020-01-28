@@ -15,12 +15,6 @@ function monthIndexToColor(monthIndex) {
 	return monthColors[monthIndex - 1];
 }
 
-function monthNameToIndex(monthName) {
-	const monthNames = months.map(item => item.name);
-	const month = monthNames.indexOf(monthName);
-	return month ? month + 1 : 0;
-}
-
 function daysInMonth(date) {
 	return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
 }
@@ -40,7 +34,6 @@ function dateRangeArray(start, end) {
 export {
 	monthIndexToName,
 	monthIndexToColor,
-	monthNameToIndex,
 	daysInMonth,
 	yearToday,
 	dateRangeArray,

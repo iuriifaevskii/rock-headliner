@@ -81,9 +81,7 @@ function OneLine(props) {
 		lines.push(
 			<HorizontalLine
 				oneDayIndent={oneDayIndent}
-				monthNumber={monthNumber}
 				key={i}
-				numberOfLine={i}
 				days={days}
 				festivalsForSelectedMonth={buildFestArrays()[i]}
 				extractFest={extractFest}
@@ -92,9 +90,13 @@ function OneLine(props) {
 	}
 
 	return lines.length ? (
-		<div style={monthBackground}>
-			<div style={monthText}>{monthIndexToName(monthNumber)}</div>
-			<div style={lineWrapper}>{lines}</div>
+		<div className='one-line' style={monthBackground}>
+			<div className='month-name' style={monthText}>
+				{monthIndexToName(monthNumber)}
+			</div>
+			<div className='month-content' style={lineWrapper}>
+				{lines}
+			</div>
 		</div>
 	) : null;
 }
