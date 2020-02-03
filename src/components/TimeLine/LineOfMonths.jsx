@@ -33,6 +33,7 @@ function LineOfMonths(props) {
 							date,
 							scale: item.scale,
 							background: item.background,
+							banner: item.banner,
 						};
 					}
 				);

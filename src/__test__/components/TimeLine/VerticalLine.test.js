@@ -30,6 +30,7 @@ describe('test VerticalLine component', () => {
 			zIndex: 1,
 			border: 0,
 			transform: 'scale(1)',
+			cursor: 'default',
 		};
 		wrapper.simulate('mouseenter');
 		wrapper.simulate('click');
@@ -68,6 +69,7 @@ describe('test VerticalLine component', () => {
 			zIndex: 100,
 			border: '1px solid white',
 			transform: 'scale(1)',
+			cursor: 'default',
 		};
 		expect(wrapper.find('.vertical-line').text()).toEqual('5');
 		expect(wrapper.find('.vertical-line').props().style).toEqual(
@@ -104,6 +106,7 @@ describe('test VerticalLine component', () => {
 			zIndex: 101,
 			border: '1px solid white',
 			transform: 'scale(1.4, 1.6)',
+			cursor: 'pointer',
 		};
 		wrapper.simulate('mouseenter');
 		wrapper.simulate('click');
@@ -113,6 +116,7 @@ describe('test VerticalLine component', () => {
 
 		wrapper.simulate('mouseleave');
 		expectedStyles.transform = 'scale(1)';
+		expectedStyles.cursor = 'default';
 		expectedStyles.zIndex = 100;
 		expect(wrapper.find('.vertical-line').props().style).toEqual(
 			expectedStyles
