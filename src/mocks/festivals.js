@@ -2,11 +2,16 @@ export default [
 	{
 		id: 1,
 		name: 'Atlas Weekend',
-		description: 'description',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
 		startDate: '08/08/2020',
 		endDate: '08/12/2020',
 		scale: 7,
 		background: '#0000ff',
+		site: 'https://atlasweekend.com',
+		ticket: 'https://atlasweekend.com/tickets',
+		banner:
+			'https://mesta.com.ua/wp-content/uploads/2020/01/AtlasWeekend2020Artwork.jpg',
 	},
 	{
 		id: 2,
@@ -16,6 +21,10 @@ export default [
 		endDate: '08/23/2020',
 		scale: 9,
 		background: '#ff0000',
+		site: 'https://www.uparkfestival.com',
+		ticket: 'http://www.javascriptkit.com/',
+		banner:
+			'https://allfest.ru/sites/default/files/styles/afisha_750/public/upark_2019.jpg?itok=sT9ZP0gC',
 	},
 	{
 		id: 3,
@@ -25,6 +34,10 @@ export default [
 		endDate: '08/04/2020',
 		scale: 10,
 		background: '#ffa500fa',
+		site: 'https://opener.pl/en',
+		ticket: 'http://www.javascriptkit.com/',
+		banner:
+			'https://www.billboard.com/files/styles/article_main_image/public/media/ultra-europe-photo-by-Julien-Duval-2017-billboard-1548.jpg',
 	},
 	{
 		id: 4,
@@ -34,6 +47,10 @@ export default [
 		endDate: '08/11/2020',
 		scale: 11,
 		background: '#ff590afa',
+		site: 'https://madcoolfestival.es/en',
+		ticket: 'http://www.javascriptkit.com/',
+		banner:
+			'https://www.billboard.com/files/styles/article_main_image/public/media/ultra-europe-photo-by-Julien-Duval-2017-billboard-1548.jpg',
 	},
 	{
 		id: 5,
@@ -43,6 +60,10 @@ export default [
 		endDate: '09/02/2020',
 		scale: 8,
 		background: '#38a500fa',
+		site: 'http://www.javascriptkit.com/',
+		ticket: 'http://www.javascriptkit.com/',
+		banner:
+			'https://www.billboard.com/files/styles/article_main_image/public/media/ultra-europe-photo-by-Julien-Duval-2017-billboard-1548.jpg',
 	},
 	{
 		id: 6,
@@ -52,6 +73,10 @@ export default [
 		endDate: '09/03/2020',
 		scale: 8,
 		background: '#b100bdfa',
+		site: 'http://www.javascriptkit.com/',
+		ticket: 'http://www.javascriptkit.com/',
+		banner:
+			'https://www.billboard.com/files/styles/article_main_image/public/media/ultra-europe-photo-by-Julien-Duval-2017-billboard-1548.jpg',
 	},
 	{
 		id: 7,
@@ -61,6 +86,10 @@ export default [
 		endDate: '09/01/2020',
 		scale: 8,
 		background: '#ff4e4efa',
+		site: 'http://www.javascriptkit.com/',
+		ticket: 'http://www.javascriptkit.com/',
+		banner:
+			'https://www.billboard.com/files/styles/article_main_image/public/media/ultra-europe-photo-by-Julien-Duval-2017-billboard-1548.jpg',
 	},
 	{
 		id: 8,
@@ -70,6 +99,10 @@ export default [
 		endDate: '09/20/2020',
 		scale: 8,
 		background: '#026f00fa',
+		site: 'http://www.javascriptkit.com/',
+		ticket: 'http://www.javascriptkit.com/',
+		banner:
+			'https://www.billboard.com/files/styles/article_main_image/public/media/ultra-europe-photo-by-Julien-Duval-2017-billboard-1548.jpg',
 	},
 	{
 		id: 9,
@@ -79,5 +112,9 @@ export default [
 		endDate: '10/20/2020',
 		scale: 7,
 		background: '#3000f0',
+		site: 'http://www.javascriptkit.com/',
+		ticket: 'http://www.javascriptkit.com/',
+		banner:
+			'https://www.billboard.com/files/styles/article_main_image/public/media/ultra-europe-photo-by-Julien-Duval-2017-billboard-1548.jpg',
 	},
 ];

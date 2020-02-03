@@ -5,6 +5,7 @@ function VerticalLine(props) {
 	const { oneDayIndent, day, pointedDay, extractFest } = props;
 
 	const [transform, setTransform] = useState('scale(1)');
+	const [cursor, setCursor] = useState('default');
 	const [zIndex, setZIndex] = useState(pointedDay ? 100 : 1);
 
 	const lineWrapper = {
@@ -19,11 +20,13 @@ function VerticalLine(props) {
 		zIndex,
 		border: pointedDay ? '1px solid white' : 0,
 		transform,
+		cursor,
 	};
 
 	const handleMouseEnter = () => {
 		if (pointedDay) {
 			setTransform('scale(1.4, 1.6)');
+			setCursor('pointer');
 			setZIndex(101);
 		}
 	};
@@ -31,6 +34,7 @@ function VerticalLine(props) {
 	const handleMouseLeave = () => {
 		if (pointedDay) {
 			setTransform('scale(1)');
+			setCursor('default');
 			setZIndex(100);
 		}
 	};

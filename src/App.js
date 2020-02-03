@@ -1,31 +1,94 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-
-import './App.css';
 
 import { TimeLine, FestPanel } from './components';
 
-function App(props) {
-	const { fetchFestsData, numberOfMonthsInLine, width } = props;
+import festivals from './mocks/festivals';
+import headlinersForOneFest from './mocks/headlinersForOneFest';
+import artistsExceptForHeadlinersForOneFest from './mocks/artistsExceptForHeadlinersForOneFest';
+import socialNetworksForOneFest from './mocks/socialNetworksForOneFest';
+
+function App() {
+	const numberOfMonthsInLine = 3;
+	const width = 900;
+
 	const [fest, setFest] = useState(null);
+	const [selectedFestID, setSelectedFestId] = useState(null);
 	const [fests, setFests] = useState([]);
+	const [headliners, setHeadliners] = useState([]);
+	const [artistsExceptForHeadliners, setArtistsExceptForHeadliners] = useState(
+		[]
+	);
+	const [socialNetworks, setSocialNetworks] = useState([]);
+
+	const fetchFests = async () =>
+		fetch('http://reduxblog.herokuapp.com/api/posts')
+			.then(response => response.json())
+			.then(() => festivals);
+
+	const fetchArtistsExceptForHeadliners = async festID =>
+		fetch(`http://reduxblog.herokuapp.com/api/posts/${festID}`)
+			.then(response => response.json())
+			.then(() => artistsExceptForHeadlinersForOneFest);
+
+	const fetchHeadliners = async festID =>
+		fetch(`http://reduxblog.herokuapp.com/api/posts/${festID}`)
+			.then(response => response.json())
+			.then(() => headlinersForOneFest);
+
+	const fetchSocialNetworks = async festID =>
+		fetch(`http://reduxblog.herokuapp.com/api/posts/${festID}`)
+			.then(response => response.json())
+			.then(() => socialNetworksForOneFest);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			setFests(await fetchFests());
+		};
+		fetchData();
+	}, []);
 
 	useEffect(() => {
 		async function fetchData() {
-			const festivals = await fetchFestsData();
-			setFests(festivals);
+			setArtistsExceptForHeadliners(
+				await fetchArtistsExceptForHeadliners(selectedFestID)
+			);
+			setHeadliners(await fetchHeadliners(selectedFestID));
+			setSocialNetworks(await fetchSocialNetworks(selectedFestID));
 		}
-		fetchData();
-	});
+		if (selectedFestID) {
+			fetchData();
+		}
+	}, [selectedFestID]);
+
+	const title = {
+		fontSize: '56px',
+	};
+
+	const header = {
+		backgroundColor: '#1c2329',
+		minHeight: '100vh',
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		justifyContent: 'center',
+		fontSize: 'calc(10px + 2vmin)',
+		color: 'white',
+	};
+
+	const container = {
+		textAlign: 'center',
+	};
 
 	const extractFest = festName => {
 		const selectedFest = fests.find(item => item.name === festName);
 		setFest(selectedFest);
+		setSelectedFestId(selectedFest.id);
 	};
+
 	return (
-		<div className='App'>
-			<header className='App-header'>
-				<p>Rock Headliner</p>
+		<div style={container}>
+			<header style={header}>
+				<h1 style={title}>Select Festival Day</h1>
 				{fests.length ? (
 					<TimeLine
 						festivals={fests}
@@ -41,7 +104,13 @@ function App(props) {
 						name={fest.name}
 						description={fest.description}
 						startDate={fest.startDate}
+						banner={fest.banner}
+						site={fest.site}
+						ticket={fest.ticket}
 						endDate={fest.endDate}
+						headliners={headliners}
+						socialNetworks={socialNetworks}
+						artistsExceptForHeadliners={artistsExceptForHeadliners}
 					/>
 				) : (
 					<div />
@@ -50,16 +119,5 @@ function App(props) {
 		</div>
 	);
 }
-
-App.propTypes = {
-	numberOfMonthsInLine: PropTypes.oneOf([1, 2, 3]),
-	width: PropTypes.oneOf([700, 800, 900, 1000]),
-	fetchFestsData: PropTypes.func.isRequired,
-};
-
-App.defaultProps = {
-	numberOfMonthsInLine: 3,
-	width: 1000,
-};
 
 export default App;
