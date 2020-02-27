@@ -22,17 +22,20 @@ function ListOfArtists(props) {
 		<section className='list-of-artists'>
 			<h3 className='title'>{title}</h3>
 			<div className='artists' style={listContainer}>
-				{arrayOfArtists.map(artist => (
-					<Artist
-						className='artist'
-						cardWidth={cardWidth}
-						imageHeight={imageHeight}
-						key={artist.id}
-						name={artist.name}
-						photo={artist.photo}
-						youtube={artist.youtube}
-					/>
-				))}
+				{arrayOfArtists.map(artist => {
+					const { _id, name, photo, youtube } = artist;
+					return (
+						<Artist
+							className='artist'
+							cardWidth={cardWidth}
+							imageHeight={imageHeight}
+							key={_id}
+							name={name}
+							photo={photo}
+							youtube={youtube}
+						/>
+					);
+				})}
 			</div>
 		</section>
 	);
@@ -42,7 +45,7 @@ ListOfArtists.propTypes = {
 	title: PropTypes.string.isRequired,
 	arrayOfArtists: PropTypes.arrayOf(
 		PropTypes.shape({
-			id: PropTypes.number.isRequried,
+			_id: PropTypes.string.isRequried,
 			name: PropTypes.string.isRequried,
 			photo: PropTypes.string.isRequried,
 			youtube: PropTypes.string.isRequried,

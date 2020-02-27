@@ -9,7 +9,7 @@ describe('test OneLine component', () => {
 		const numberOfMonthsInLine = 3;
 		const festivalsForSelectedMonth = [
 			{
-				id: 3,
+				_id: '3',
 				name: "Open'er Festival",
 				description: 'description',
 				date: new Date('08/01/2020'),
@@ -17,7 +17,7 @@ describe('test OneLine component', () => {
 				background: '#ffa500fa',
 			},
 			{
-				id: 3,
+				_id: '3',
 				name: "Open'er Festival",
 				description: 'description',
 				date: new Date('08/02/2020'),
@@ -25,7 +25,7 @@ describe('test OneLine component', () => {
 				background: '#ffa500fa',
 			},
 			{
-				id: 3,
+				_id: '3',
 				name: "Open'er Festival",
 				description: 'description',
 				date: new Date('08/03/2020'),
@@ -33,7 +33,7 @@ describe('test OneLine component', () => {
 				background: '#ffa500fa',
 			},
 			{
-				id: 1,
+				_id: '3',
 				name: 'Atlas Weekend',
 				description: 'description',
 				date: new Date('08/08/2020'),
@@ -41,7 +41,7 @@ describe('test OneLine component', () => {
 				background: '#0000ff',
 			},
 			{
-				id: 1,
+				_id: '3',
 				name: 'Atlas Weekend',
 				description: 'description',
 				date: new Date('08/09/2020'),

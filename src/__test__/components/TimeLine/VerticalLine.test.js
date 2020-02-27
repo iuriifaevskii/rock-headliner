@@ -42,7 +42,7 @@ describe('test VerticalLine component', () => {
 
 	it('correct pass props to the VerticalLine component if it has pointedDay object', () => {
 		const pointedDay = {
-			id: 8,
+			_id: '8',
 			name: 'Test Festival',
 			description: 'description',
 			date: new Date('10/10/2020'),
@@ -79,7 +79,7 @@ describe('test VerticalLine component', () => {
 
 	it('correct pass props to the VerticalLine component if it has pointedDay object and lounch handleMouseEnter + handleClick. After lounch handleMouseLeave', () => {
 		const pointedDay = {
-			id: 8,
+			_id: '8',
 			name: 'Test Festival',
 			description: 'description',
 			date: new Date('10/10/2020'),

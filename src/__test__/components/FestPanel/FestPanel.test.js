@@ -14,7 +14,7 @@ describe('test FestPanel component', () => {
 		const ticket = 'https://atlasweekend.com/tickets';
 		const headliners = [
 			{
-				id: 1,
+				_id: '1',
 				name: 'Asap Rocky',
 				photo:
 					'https://www.gstatic.com/tv/thumb/persons/673344/673344_v9_bb.jpg',
@@ -23,7 +23,7 @@ describe('test FestPanel component', () => {
 		];
 		const artistsExceptForHeadliners = [
 			{
-				id: 4,
+				_id: '4',
 				name: 'Test Artist',
 				photo:
 					'https://youngcompany.com/wp-content/uploads/2013/07/invisible-website.png',
@@ -31,7 +31,7 @@ describe('test FestPanel component', () => {
 					'https://www.youtube.com/watch?v=gGdGFtwCNBE&list=RDgGdGFtwCNBE',
 			},
 			{
-				id: 5,
+				_id: '5',
 				name: 'Test Artist 2',
 				photo:
 					'https://youngcompany.com/wp-content/uploads/2013/07/invisible-website.png',
@@ -41,12 +41,12 @@ describe('test FestPanel component', () => {
 		];
 		const socialNetworks = [
 			{
-				id: 1,
+				_id: '1',
 				name: 'Facebook',
 				link: 'https://www.facebook.com/atlasweekend',
 			},
 			{
-				id: 2,
+				_id: '2',
 				name: 'Instagram',
 				link: 'https://www.instagram.com/atlasweekend',
 			},

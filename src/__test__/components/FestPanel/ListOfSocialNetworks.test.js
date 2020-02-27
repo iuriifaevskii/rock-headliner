@@ -6,12 +6,12 @@ describe('test ListOfSocialNetworks component', () => {
 	it('correct pass props to the ListOfSocialNetworks component', () => {
 		const socialNetworks = [
 			{
-				id: 1,
+				_id: '1',
 				name: 'Facebook',
 				link: 'https://www.facebook.com/atlasweekend',
 			},
 			{
-				id: 2,
+				_id: '2',
 				name: 'Instagram',
 				link: 'https://www.instagram.com/atlasweekend',
 			},

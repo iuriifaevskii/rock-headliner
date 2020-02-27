@@ -95,7 +95,7 @@ FestPanel.propTypes = {
 	ticket: PropTypes.string.isRequired,
 	headliners: PropTypes.arrayOf(
 		PropTypes.shape({
-			id: PropTypes.number.isRequried,
+			_id: PropTypes.string.isRequried,
 			name: PropTypes.string.isRequried,
 			photo: PropTypes.string.isRequried,
 			youtube: PropTypes.string.isRequried,
@@ -103,7 +103,7 @@ FestPanel.propTypes = {
 	).isRequired,
 	artistsExceptForHeadliners: PropTypes.arrayOf(
 		PropTypes.shape({
-			id: PropTypes.number.isRequried,
+			_id: PropTypes.string.isRequried,
 			name: PropTypes.string.isRequried,
 			photo: PropTypes.string.isRequried,
 			youtube: PropTypes.string.isRequried,
@@ -111,7 +111,7 @@ FestPanel.propTypes = {
 	).isRequired,
 	socialNetworks: PropTypes.arrayOf(
 		PropTypes.shape({
-			id: PropTypes.number.isRequried,
+			_id: PropTypes.string.isRequried,
 			name: PropTypes.string.isRequried,
 			link: PropTypes.string.isRequried,
 		})

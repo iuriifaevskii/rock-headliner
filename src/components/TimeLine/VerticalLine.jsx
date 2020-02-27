@@ -65,7 +65,7 @@ VerticalLine.propTypes = {
 	oneDayIndent: PropTypes.number.isRequired,
 	day: PropTypes.number.isRequired,
 	pointedDay: PropTypes.shape({
-		id: PropTypes.number,
+		_id: PropTypes.string,
 		name: PropTypes.string,
 		description: PropTypes.string,
 		scale: PropTypes.number,

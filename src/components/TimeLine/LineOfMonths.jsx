@@ -22,21 +22,30 @@ function LineOfMonths(props) {
 		const getFestivals = () => {
 			const fullFestivalsArray = [];
 			festivals.forEach(item => {
-				const startDate = new Date(item.startDate);
-				const endDate = new Date(item.endDate);
-				const festivalsWithDay = dateRangeArray(startDate, endDate).map(
-					date => {
-						return {
-							id: item.id,
-							name: item.name,
-							description: item.description,
-							date,
-							scale: item.scale,
-							background: item.background,
-							banner: item.banner,
-						};
-					}
-				);
+				const {
+					_id,
+					startDate,
+					endDate,
+					name,
+					description,
+					scale,
+					background,
+					banner,
+				} = item;
+				const festivalsWithDay = dateRangeArray(
+					new Date(startDate),
+					new Date(endDate)
+				).map(date => {
+					return {
+						_id,
+						name,
+						description,
+						date,
+						scale,
+						background,
+						banner,
+					};
+				});
 				fullFestivalsArray.push(...festivalsWithDay);
 			});
 			return fullFestivalsArray;
@@ -67,7 +76,7 @@ LineOfMonths.propTypes = {
 	numberOfMonthsInLine: PropTypes.number.isRequired,
 	festivals: PropTypes.arrayOf(
 		PropTypes.shape({
-			id: PropTypes.number.isRequried,
+			_id: PropTypes.string.isRequried,
 			name: PropTypes.string.isRequried,
 			startDate: PropTypes.string.isRequried,
 			endDate: PropTypes.string.isRequried,

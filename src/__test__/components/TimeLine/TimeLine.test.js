@@ -8,7 +8,7 @@ describe('test TimeLine component', () => {
 		const numberOfMonthsInLine = 3;
 		const festivals = [
 			{
-				id: 1,
+				_id: '1',
 				name: 'Atlas Weekend',
 				description: 'description',
 				startDate: '08/08/2020',
@@ -17,7 +17,7 @@ describe('test TimeLine component', () => {
 				background: '#0000ff',
 			},
 			{
-				id: 2,
+				_id: '2',
 				name: 'Upark Festival',
 				description: 'description',
 				startDate: '08/21/2020',

@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import { apiUrl } from './config';
 import { TimeLine, FestPanel } from './components';
-
-import festivals from './mocks/festivals';
-import headlinersForOneFest from './mocks/headlinersForOneFest';
-import artistsExceptForHeadlinersForOneFest from './mocks/artistsExceptForHeadlinersForOneFest';
-import socialNetworksForOneFest from './mocks/socialNetworksForOneFest';
 
 function App() {
 	const numberOfMonthsInLine = 3;
@@ -18,27 +14,21 @@ function App() {
 	const [artistsExceptForHeadliners, setArtistsExceptForHeadliners] = useState(
 		[]
 	);
-	const [socialNetworks, setSocialNetworks] = useState([]);
 
 	const fetchFests = async () =>
-		fetch('http://reduxblog.herokuapp.com/api/posts')
+		fetch(`${apiUrl}/fest`)
 			.then(response => response.json())
-			.then(() => festivals);
+			.then(responseJSON => responseJSON.data);
 
 	const fetchArtistsExceptForHeadliners = async festID =>
-		fetch(`http://reduxblog.herokuapp.com/api/posts/${festID}`)
+		fetch(`${apiUrl}/artist/except-for-headliners/${festID}`)
 			.then(response => response.json())
-			.then(() => artistsExceptForHeadlinersForOneFest);
+			.then(responseJSON => responseJSON.data);
 
 	const fetchHeadliners = async festID =>
-		fetch(`http://reduxblog.herokuapp.com/api/posts/${festID}`)
+		fetch(`${apiUrl}/artist/headliners/${festID}`)
 			.then(response => response.json())
-			.then(() => headlinersForOneFest);
-
-	const fetchSocialNetworks = async festID =>
-		fetch(`http://reduxblog.herokuapp.com/api/posts/${festID}`)
-			.then(response => response.json())
-			.then(() => socialNetworksForOneFest);
+			.then(responseJSON => responseJSON.data);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -53,7 +43,6 @@ function App() {
 				await fetchArtistsExceptForHeadliners(selectedFestID)
 			);
 			setHeadliners(await fetchHeadliners(selectedFestID));
-			setSocialNetworks(await fetchSocialNetworks(selectedFestID));
 		}
 		if (selectedFestID) {
 			fetchData();
@@ -81,8 +70,9 @@ function App() {
 
 	const extractFest = festName => {
 		const selectedFest = fests.find(item => item.name === festName);
+		const { _id } = selectedFest;
 		setFest(selectedFest);
-		setSelectedFestId(selectedFest.id);
+		setSelectedFestId(_id);
 	};
 
 	return (
@@ -109,7 +99,7 @@ function App() {
 						ticket={fest.ticket}
 						endDate={fest.endDate}
 						headliners={headliners}
-						socialNetworks={socialNetworks}
+						socialNetworks={fest.socialNetworks}
 						artistsExceptForHeadliners={artistsExceptForHeadliners}
 					/>
 				) : (

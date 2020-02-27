@@ -35,7 +35,7 @@ TimeLine.propTypes = {
 	numberOfMonthsInLine: PropTypes.oneOf([1, 2, 3]),
 	festivals: PropTypes.arrayOf(
 		PropTypes.shape({
-			id: PropTypes.number.isRequried,
+			_id: PropTypes.string.isRequried,
 			name: PropTypes.string.isRequried,
 			startDate: PropTypes.string.isRequried,
 			endDate: PropTypes.string.isRequried,

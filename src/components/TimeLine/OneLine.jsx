@@ -108,7 +108,7 @@ OneLine.propTypes = {
 	extractFest: PropTypes.func.isRequired,
 	festivalsForSelectedMonth: PropTypes.arrayOf(
 		PropTypes.shape({
-			id: PropTypes.number.isRequried,
+			_id: PropTypes.string.isRequried,
 			name: PropTypes.string.isRequried,
 			description: PropTypes.string.isRequried,
 			date: PropTypes.instanceOf(Date),

@@ -29,11 +29,14 @@ function ListOfSocialNetworks(props) {
 			className='social-networks'
 			style={{ ...textArticle, ...socialNetwork }}
 		>
-			{socialNetworks.map(item => (
-				<li key={item.id}>
-					<Link href={item.link} text={item.name} />
-				</li>
-			))}
+			{socialNetworks.map(item => {
+				const { _id, link, name } = item;
+				return (
+					<li key={_id}>
+						<Link href={link} text={name} />
+					</li>
+				);
+			})}
 		</ul>
 	);
 }
@@ -41,7 +44,7 @@ function ListOfSocialNetworks(props) {
 ListOfSocialNetworks.propTypes = {
 	socialNetworks: PropTypes.arrayOf(
 		PropTypes.shape({
-			id: PropTypes.number.isRequried,
+			_id: PropTypes.string.isRequried,
 			name: PropTypes.string.isRequried,
 			link: PropTypes.string.isRequried,
 		})
