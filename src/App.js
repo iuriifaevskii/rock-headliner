@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { apiUrl } from './config';
-import { TimeLine, FestPanel } from './components';
+import { TimeLine, FestPanel, CreateFest } from './components';
 
 function App() {
 	const numberOfMonthsInLine = 3;
@@ -78,6 +78,7 @@ function App() {
 	return (
 		<div style={container}>
 			<header style={header}>
+				<CreateFest name='Create Fest' />
 				<h1 style={title}>Select Festival Day</h1>
 				{fests.length ? (
 					<TimeLine
